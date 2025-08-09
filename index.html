@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discover Dhaka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      /* Gallery for Culture, Transport, and Education sections */
+      .culture-gallery, .transport-gallery, .education-gallery {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .culture-gallery img, .transport-gallery img, .education-gallery img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        background: #eee;
+      }
+      /* Gallery for Food section */
+      .food-gallery {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .food-gallery img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        background: #eee;
+      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f1f3f0da;
+      color: #23927a;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: url('https://nomadparadise.com/wp-content/uploads/2021/07/thingstododhaka_00-1024x683.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: #008b8b;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+      /* Flexbox is for about section */
+      .about-flex {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+      }
+      .about-text {
+        flex: 1 1 0;
+      }
+      .about-map {
+        flex: 1 1 0;
+        min-width: 300px;
+        max-width: 400px;
+      }
+      .about-map iframe {
+        width: 100%;
+        height: 250px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      /* Gor History section */
+      .history-gallery {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .history-gallery img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        background: #eee;
+      }
+
+      /*For Attractions section */
+      .attraction-gallery {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .attraction-gallery img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        background: #eee;
+      }
+
+      @media (max-width: 900px) {
+        .about-flex {
+          flex-direction: column;
+        }
+        .about-map {
+          max-width: 100%;
+        }
+      }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      color: #008b8b;
+      margin-bottom: 15px;
+      font-size: 1.8em;
+    }
+
+    section ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Dhaka – The Heart of Bangladesh</h1>
+  <p>Discover the rich history, culture, food, and life of Dhaka city</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#history">History</a>
+  <a href="#attractions">Attractions</a>
+  <a href="#food">Food</a>
+  <a href="#culture">Culture</a>
+  <a href="#transport">Transport</a>
+  <a href="#education">Education</a>
+  <a href="#tips">Visitor Tips</a>
+</nav>
+
+<section id="about">
+  <h2>About Dhaka</h2>
+  <div class="about-flex">
+    <div class="about-text">
+      <p>Dhaka, the capital of Bangladesh, is a vibrant and bustling city located on the banks of the Buriganga River. With a rich history dating back to the Mughal era, it is now one of the fastest-growing cities in South Asia. Dhaka is known for its diversity, energy, and deep cultural roots.</p>
+    </div>
+    <div class="about-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902217652406!2d90.3910633153637!3d23.75090339459109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b894b7b7b7b7%3A0x7b7b7b7b7b7b7b7b!2sDhaka!5e0!3m2!1sen!2sbd!4v1625920000000!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="history">
+  <h2>History of Dhaka</h2>
+
+  <p>Dhaka’s history stretches back over a thousand years. It became a prominent city during the Mughal period in the 17th century when it was declared the capital of Bengal by Subahdar Islam Khan in 1610. Under Mughal rule, Dhaka flourished as a center of trade, especially known for its muslin—a fine cotton fabric that was highly sought after in Europe and the Middle East.</p>
+  
+  <p>During British colonial rule (1757–1947), Dhaka lost some of its former glory but remained an important administrative and commercial center. After the partition of India in 1947, Dhaka became the capital of East Pakistan. The city played a vital role in the Language Movement of 1952 and later in the Liberation War of 1971, after which it became the capital of an independent Bangladesh.</p>
+
+  <p>Today, Dhaka is one of the most densely populated cities in the world and continues to be the political, economic, and cultural hub of Bangladesh.</p>
+</section>
+
+<section id="attractions">
+  <h2>Top Attractions</h2>
+  <div class="attraction-gallery">
+    <img src="https://www.travelandexplorebd.com/storage/app/public/posts/October2019/dreamstime_xxl_55742473.jpg" alt="Attraction 1">
+    <img src="https://sacredsites.com/images/asia/bangladesh/Dhakeshwari-Dhaka-Shiva-temples-H-1200.jpg" alt="Attraction 2">
+    <img src="https://t3.ftcdn.net/jpg/05/23/40/64/360_F_523406463_5WljaYQQguIP1anuFpzTTDz75n73JE0x.jpg" alt="Attraction 3">
+    <img src="data:image/webp;base64,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" alt="Attraction 4">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/16/b2/fe/ahsan-monjil.jpg?w=1200&h=1200&s=1" alt="Attraction 5">
+    <img src="https://th.bing.com/th/id/OIP.QGn1D32JwejSDWmQdUTC1gHaEL?w=317&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Attraction 6">
+  </div>
+  <ul>
+    <li><strong>Lalbagh Fort:</strong> A 17th-century Mughal fort.</li>
+    <li><strong>Ahsan Manzil:</strong> The pink palace of Dhaka’s Nawabs.</li>
+    <li><strong>National Parliament House:</strong> Designed by Louis Kahn, an architectural marvel.</li>
+    <li><strong>Sadarghat:</strong> Bustling river port with vibrant boat life.</li>
+    <li><strong>Star Mosque & Dhakeshwari Temple:</strong> Beautiful religious sites.</li>
+    <li><strong>Hatirjheel:</strong> A serene lake and modern recreational area.</li>
+  </ul>
+</section>
+
+<section id="food">
+  <h2>Food & Cuisine</h2>
+  <div class="food-gallery">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.GTAuaJiSl9Mr-sbXDMTFdAHaE6?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Food 1">
+    <img src="https://i.pinimg.com/originals/ce/5b/c0/ce5bc0e70038f67f77be08db1c372555.jpg" alt="Food 2">
+    <img src="https://images.deliveryhero.io/image/fd-bd/LH/dqvq-hero.jpg" alt="Food 3">
+    <img src="https://i.ytimg.com/vi/tc-6qBb44iQ/maxresdefault.jpg" alt="Food 4">
+  </div>
+  <p>Dhaka is a paradise for food lovers! Try:</p>
+  <ul>
+    <li>Haji and Fakruddin Biriyani</li>
+    <li>Fuchka, Jhalmuri, and street-side snacks</li>
+    <li>Bakarkhani with tea</li>
+    <li>Sweet treats like Mishti Doi, Sandesh, and Rasgulla</li>
+  </ul>
+</section>
+
+<section id="culture">
+  <h2>Culture & Festivals</h2>
+  <div class="culture-gallery">
+      <img src="https://th.bing.com/th/id/OIP.dRYsLAviPwlooG03RZxH9wHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Culture 1">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.9hbe37ImDS3P27AL5l23AwHaE8?w=711&h=474&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Culture 2">
+    <img src="https://c8.alamy.com/comp/E9CTBG/dhaka-bangladesh-25th-oct-2014-thousands-of-bangladeshi-islamic-support-E9CTBG.jpg" alt="Culture 3">
+    <img src="https://images.hindustantimes.com/img/2022/09/30/1600x900/durga_puja_1664502025274_1664502025551_1664502025551.jpg" alt="Culture 4">
+  </div>
+  <p>Dhaka is rich in culture and traditions. Key celebrations include:</p>
+  <ul>
+    <li><strong>Pohela Boishakh:</strong> Bengali New Year</li>
+    <li><strong>Eid-ul-Fitr and Eid-ul-Adha:</strong> Major Muslim festivals</li>
+    <li><strong>Durga Puja:</strong> Celebrated by the Hindu community</li>
+    <li><strong>Language Movement Day (21st February):</strong> A day of national pride</li>
+  </ul>
+</section>
+
+<section id="transport">
+  <h2>Transportation</h2>
+  <div class="transport-gallery">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.D6GL6DJ8N3glkFCIy0eu0AHaEd?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Transport 1">
+    <img src="https://tse4.mm.bing.net/th/id/OIP.sdgDQeFYrrK2oTCxSqLXXgAAAA?w=397&h=598&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Transport 2">
+    <img src="https://thumbs.dreamstime.com/b/shadarghat-launch-terminal-dhaka-all-launch-anchor-shadarghat-launch-terminal-dhaka-bangladesh-may-289258977.jpg" alt="Transport 3">
+    <img src=" https://th.bing.com/th/id/R.5ee94449a924c35e74d7206003e167a8?rik=dxOpoe54VuBliw&pid=ImgRaw&r=0" alt="Transport 4">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.kwQQj6ovkx356y74oTBKKwHaEJ?w=910&h=510&rs=1&pid=ImgDetMain&o=7&rm=3 " alt="Transport 5">
+  </div>
+  <p>Getting around Dhaka includes:</p>
+  <ul>
+    <li>Rickshaws (iconic and colorful!)</li>
+    <li>Buses and minibuses</li>
+    <li>Ride-sharing: Uber, Pathao, Shohoz</li>
+    <li>Sadarghat water transport</li>
+    <li>New Dhaka Metro Rail (modern transit system)</li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education & Institutions</h2>
+  <div class="education-gallery">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.OmvgvgOcMVb-DoL0pQ9oZAHaEC?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Education 1">
+    <img src="https://images.squarespace-cdn.com/content/v1/61b1d88771230e2244b14213/4c1ebd02-c09f-4564-9962-c80cdf6bd378/BRAC+University+New+Campus+Development+Project.jpeg" alt="Education 2">
+    <img src="https://th.bing.com/th/id/OIP.vH-0yNeokX5XyXJHKpOMTgHaFC?w=257&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Education 3">
+    <img src="https://tfe-bd.sgp1.digitaloceanspaces.com/uploads/1667284214.jpg" alt="Education 4">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.XW1Ec1Z7qrk3TKWXloFMaAHaEn?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Education 5">
+  </div>
+  <p>Dhaka is home to many prestigious institutions:</p>
+  <ul>
+    <li>University of Dhaka</li>
+    <li>BUET (Engineering)</li>
+    <li>North South University</li>
+    <li>BRAC University</li>
+    <li>UITS</li>
+  </ul>
+</section>
+
+<section id="tips">
+  <h2>Tips for Visitors</h2>
+  <ul>
+    <li>Best time to visit: Winter (November to February)</li>
+    <li>Local currency: Bangladeshi Taka (৳)</li>
+    <li>Language: Bangla (বাংলা)</li>
+    <li>Try local street food, but drink bottled water</li>
+    <li>Be mindful of traffic and crowded areas</li>
+    <li>Carry your personal belonging safely</li>
+    <li>Report to authority in problematic cases</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Discover Dhaka | Created for Assignment</p>
+</footer>
+
+</body>
+</html>
